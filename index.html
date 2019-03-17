@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" href="images/fv.png" type="image/gif" sizes="16x16" />
+    <title>Wikiquiz</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Mono"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="fonts/icomoon/style.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/magnific-popup.css" />
+    <link rel="stylesheet" href="css/jquery-ui.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css" />
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
+    <link rel="stylesheet" href="css/aos.css" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/skeleton.css" />
+  </head>
+  <body>
+    <div class="site-wrap">
+      <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+      <div class="container-fluid">
+        <div class="row ">
+          <div class="col-11 col-xl-2">
+            <h1 class="mb-0">
+              <a href="index.html" class="text-white h2 mb-0"
+                >Wiki<span class="text-primary">quiz</span>
+              </a>
+            </h1>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="two columns" style="margin-top: 5%"></div>
+          <div class="ten columns" style="margin-top: 5%">
+            <div class="eight columns">
+              <input
+                class="u-full-width"
+                id="article_name_input"
+                type="text"
+                placeholder="Type article name (ie. Honda, starfish, baseball)"
+              />
+            </div>
+            <div class="two columns">
+              <button onclick="new_article_query()">Quiz Me!</button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="twelve column" style="margin-top: 5%">
+            <h3 id="article_name">Welcome!</h3>
+            <p id="question_body">
+              This is WikiQuiz. Enter the name of a wikipedia article at the top
+              of this page, and we'll generate some fill-in-the-blank questions
+              to test your knowledge of the dates/things/people/places it
+              mentions. If the question doesn't seem like it was generated
+              correctly, just click next question!
+            </p>
+          </div>
+
+          <div class="row">
+            <button id="answer_a" onclick="answered_a()">A</button>
+            <button id="answer_b" onclick="answered_b()">B</button>
+            <button id="answer_c" onclick="answered_c()">C</button>
+
+            <h3 id="answer_response_label" style="margin-top: 5%">
+              ... Answer Response Here ...
+            </h3>
+          </div>
+
+          <div class="row">
+            <button id="next_question_btn" onclick="load_question()">
+              Next Question >
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+      <!--  -->
+
+      <div class="site-section">
+        <div class="container">
+          <div class="row mb-5">
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="site-section-heading">
+                <h2>Team Members</h2>
+              </div>
+            </div>
+          </div>
+
+          <div class="row align-items-center speaker">
+            <div
+              class="col-lg-6 mb-5 mb-lg-0"
+              data-aos="fade"
+              data-aos-delay="100"
+            >
+              <img src="images/jev.jpg" alt="Image" class="img-fluid" />
+            </div>
+            <div class="col-lg-6 ml-auto">
+              <h2
+                class="text-white mb-4 name"
+                data-aos="fade-right"
+                data-aos-delay="200"
+              >
+                Jeevanantham
+              </h2>
+              <div class="bio pl-lg-5">
+                <span
+                  class="text-uppercase text-primary d-block mb-3"
+                  data-aos="fade-right"
+                  data-aos-delay="300"
+                  >Web Designer</span
+                >
+                <p class="mb-4" data-aos="fade-right" data-aos-delay="400">
+                  I am Jeevanantham, web designer and programmer . I have rich experience in
+                  web site design and building and customization, also I am good
+                  at solving problems. I love to talk with you about our unique.</br>
+                  EMAIL     : Jeevananthamp98@gmail.com.</br>
+                  CONTACT   : 94453 54054</br>
+                  RESIDENCE : Bangalore 
+                </p>
+                <p data-aos="fade-right" data-aos-delay="500">
+                  Follow Jeeva &mdash;
+                  <a href="#" class="p-2"
+                    ><span class="icon-facebook"></span
+                  ></a>
+                  <a href="#" class="p-2"><span class="icon-twitter"></span></a>
+                  <a href="#" class="p-2"><span class="icon-github"></span></a>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row align-items-center speaker">
+            <div
+              class="col-lg-6 mb-5 mb-lg-0 order-lg-2"
+              data-aos="fade"
+              data-aos-delay="100"
+            >
+              <img src="images/p1.jpeg" alt="Image" class="img-fluid" />
+            </div>
+            <div class="col-lg-6 ml-auto order-lg-1">
+              <h2
+                class="text-white mb-4 name"
+                data-aos="fade-left"
+                data-aos-delay="200"
+              >
+                Akash Shekar
+              </h2>
+              <div class="bio pr-lg-5">
+                <span
+                  class="text-uppercase text-primary d-block mb-3"
+                  data-aos="fade-left"
+                  data-aos-delay="300"
+                  >Web Designer</span
+                >
+                <p class="mb-4" data-aos="fade-left" data-aos-delay="400">
+                    I am Akash, web designer .  I am good
+                    at Html and Css. I love to talk with you about our unique.</br>
+                    EMAIL     : Shekar@gmail.com.</br>
+                    CONTACT   : 94440 11305</br>
+                    RESIDENCE : Chennai. 
+                </p>
+                <p data-aos="fade-left" data-aos-delay="500">
+                  Follow Akash &mdash;
+                  <a href="#" class="p-2"
+                    ><span class="icon-facebook"></span
+                  ></a>
+                  <a href="#" class="p-2"><span class="icon-twitter"></span></a>
+                  <a href="#" class="p-2"><span class="icon-github"></span></a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- footer -->
+
+      <footer class="site-footer">
+        <div class="container">
+          <div class="row mb-5">
+            <div class="col-md-4">
+              <h2 class="footer-heading text-uppercase mb-4">About Event</h2>
+              <p>
+                Enter the name of a wikipedia article at the top of this page,
+                and we'll generate some fill-in-the-blank questions to test your
+                knowledge of the dates/things/people/places it mentions.
+              </p>
+            </div>
+            <div class="col-md-3 ml-auto">
+              <h2 class="footer-heading text-uppercase mb-4">Quick Links</h2>
+              <ul class="list-unstyled">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Team Members</a></li>
+
+                <li><a href="#">Contact Us</a></li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <h2 class="footer-heading text-uppercase mb-4">
+                Connect with Us
+              </h2>
+              <p>
+                <a href="#" class="p-2 pl-0"
+                  ><span class="icon-facebook"></span
+                ></a>
+                <a href="#" class="p-2"><span class="icon-twitter"></span></a>
+                <a href="#" class="p-2"><span class="icon-youtube"></span></a>
+                <a href="#" class="p-2"><span class="icon-instagram"></span></a>
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <div class="border-top pt-5">
+                <p>
+                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                  Copyright &copy;
+                  <script>
+                    document.write(new Date().getFullYear());
+                  </script>
+                  | All rights reserved .
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+  <!--  scripts -->
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/bootstrap-datepicker.min.js"></script>
+  <script src="js/aos.js"></script>
+
+  <script src="js/main.js"></script>
+  <script src="js/script.js"></script>
+</html>
